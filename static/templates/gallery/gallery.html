@@ -70,10 +70,12 @@
         <div class="col-sm-3 col-xs-12">
           <div class="single-class">
             <div class="class-img">
+            <a href="{{ each.id }}">
               <img alt="" src="/static/{{ each.thumbnail }}">
+            </a>
             </div>
             <div class="class-details">
-              <h3><a href="class.html">{{ each.display_name }}</a></h3>
+              <h3><a href="{{ each.id }}">{{ each.display_name }}</a></h3>
               <div class="clearfix">
                 <div class="class-meta pull-left">
                   <span>阅览</span>

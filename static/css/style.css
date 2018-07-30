@@ -684,14 +684,14 @@ div.owl-controls {
 .single-class {
     margin-bottom: 36px;
 }
-.class-img{
+.class-img {
     position: relative;
     text-align: center;
     overflow: hidden;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
 }
-.class-img img{
+.class-img a{
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     -webkit-transform: scale(1);
@@ -700,7 +700,10 @@ div.owl-controls {
     transition: all 500ms ease;
     width: 100%;
 }
-.class-img:hover img{
+.class-img a img{
+    width: 100%;
+}
+.class-img:hover a{
     -webkit-transform: scale(1.05);
     transform: scale(1.05);
 }
