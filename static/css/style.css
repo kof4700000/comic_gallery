@@ -684,6 +684,12 @@ div.owl-controls {
 .single-class {
     margin-bottom: 36px;
 }
+
+.detail-img img{
+    width: 100%;
+    height: 100%;
+}
+
 .class-img {
     position: relative;
     text-align: center;
@@ -699,9 +705,11 @@ div.owl-controls {
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
     width: 100%;
+    height: 350px;
 }
 .class-img a img{
     width: 100%;
+    height: 100%;
 }
 .class-img:hover a{
     -webkit-transform: scale(1.05);

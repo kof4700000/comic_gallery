@@ -1,49 +1,5 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-<title>Leon's Comic Gallery</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="Themeum">
-
-<!-- Include All Css -->
-<link rel="stylesheet" href="/static/css/font-awesome.min.css">
-<link rel="stylesheet" href="/static/css/bootstrap.min.css">
-<link rel="stylesheet" href="/static/css/magnific-popup.css">
-<link rel="stylesheet" href="/static/css/animate.css">
-<link rel="stylesheet" href="/static/css/fonts.css">
-<link rel="stylesheet" href="/static/css/preset.css">
-<link rel="stylesheet" href="/static/css/style.css">
-<link rel="stylesheet" href="/static/css/responsive.css">
-
-<!--[if lt IE 9]>
-  <script src="js/html5shive.js"></script>
-<![endif]-->
-
-</head>
-<body>
-<!-- Header Area -->
-<header class="header-area inner-page">
-  <!-- Header Top Area -->
-  <section class="header-top">
-    <div class="container">
-        <div class="col-sm-12 col-xs-12">
-          <div class="logo pull-left">
-            <img alt="Kidzy" src="images/home1/logo.png">
-          </div>
-          <div class="login-or-signup pull-right">
-            <a href="#">LOGIN</a>
-          </div>
-        </div>
-    </div>
-  </section>
-  <!-- /.header-top -->
-</header>
-<!-- /.header-area -->
-
-<!-- Breadcrumb  -->
-<!-- Classes Section -->
+﻿{% extends 'base.html' %}
+{% block main %}
 <section class="classes-section-2 main-bg">
   <div class="container">
     <div class="row">
@@ -70,12 +26,12 @@
         <div class="col-sm-3 col-xs-12">
           <div class="single-class">
             <div class="class-img">
-            <a href="{{ each.id }}">
+            <a href="{{ each.id }}/">
               <img alt="" src="/static/{{ each.thumbnail }}">
             </a>
             </div>
             <div class="class-details">
-              <h3><a href="{{ each.id }}">{{ each.display_name }}</a></h3>
+              <h3><a href="{{ each.id }}/">{{ each.display_name }}</a></h3>
               <div class="clearfix">
                 <div class="class-meta pull-left">
                   <span>阅览</span>
@@ -120,92 +76,4 @@
 </section>
 <!-- /.classes-section -->
 
-<!-- Facilities Section -->
-<section style="height:400px" class="footer-bg">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 col-xs-12">
-        <div class="title-with-icon text-center">
-          <!-- <img style="" alt="" src="images/op-footer.jpg"> -->
-          <h2 class="title-2">Leon's Comic Gallery</h2>
-          <p class="subtitle-2">
-            Django backend, JS & JQuery for front <br>Scrapy for images.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- /.facility-section -->
-
-<!-- Footer Section -->
-<footer class="footer-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 col-sm-6 col-xs-12 text-left">
-        <div class="about-widget">
-          <div class="footer-logo">
-            <a href="index.html"><img alt="" src="images/home1/footer-logo.png"></a>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
-            eiusmod tempor incididunt ut labore.
-          </p>
-          <span>&copy; 2016 Kidzy School</span>
-          <ul class="social-icon">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-2 col-sm-6 col-xs-12 text-left">
-        <div class="footer-widget">
-          <h3>Qucik Link</h3>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-2 col-sm-6 col-xs-12 text-left">
-        <div class="footer-widget">
-          <h3>Classes</h3>
-          <ul>
-            <li><a href="#">Happy Kiddo</a></li>
-            <li><a href="#">Junior Lambs</a></li>
-            <li><a href="#">Master Mind</a></li>
-            <li><a href="#">Rabbit House</a></li>
-            <li><a href="#">Terrific Tigers</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6 col-xs-12">
-        <div class="footer-widget">
-          <h3>Newsletter</h3>
-          <p>Copyright &copy; 2016.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
-          <form action="#" method="post" class="subscribe-form">
-            <input type="email" name="email" placeholder="Your email Id">
-            <button class="primary-btn pull-right"><span>Submit</span></button>
-            <div class="clearfix"></div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- /.footer-section -->
-
-<!-- Include All JavaScript -->
-<script src="/static/js/jquery.min.js"></script>
-<script src="/static/js/bootstrap.min.js"></script>
-<script src="/static/js/mixIt.js"></script>
-<script src="/static/js/jquery.magnific-popup.min.js"></script>
-<script src="/static/js/main.js"></script>
-</body>
-</html>
-
+{% endblock %}

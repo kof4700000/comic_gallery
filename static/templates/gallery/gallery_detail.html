@@ -1,4 +1,20 @@
-<!-- test
-<img src="/static/{{ img_src }}"></img>
--->
-
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block main %}
+<section class="classes-section-2" style="height:500px">
+  <div class="col-sm-12 col-xs-12">
+    <div class="col-sm-3 col-xs-3 detail-img">
+      <img src="/static/{{ gallery.thumbnail }}" height="10%">
+    </div>
+    <div class="col-sm-6 col-xs-6">
+      <p>{{ gallery.display_name }}</p>
+      <p>{{ gallery.summary }}</p>
+      <div class="display-volume">
+        {% for each in volume %}
+          <a href="vol_{{ each }}" id="vol_{{ each }}">第{{ each }}卷</a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
