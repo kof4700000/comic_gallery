@@ -80,7 +80,7 @@
     backface-visibility: hidden;
 }
 .logo a:after{
-    background: rgba(0, 0, 0, 0) url("../images/base/logo-bg.png") no-repeat scroll center center / cover ;
+    background: rgba(0, 0, 0, 0) url("../images/home1/logo-bg.png") no-repeat scroll center center / cover ;
     content: "";
     height: 182px;
     left: -54px;
@@ -105,10 +105,6 @@
     -webkit-animation-iteration-count: infinite;
         animation-iteration-count: infinite;*/
 }
-
-.quick-link{
-    margin-top: 30px;
-}
 .logo a:hover:after{
     /*    -webkit-transform: rotate(360deg);
         -moz-transform: rotate(360deg);
@@ -120,14 +116,14 @@
 }
 .footer-bg {
     z-index: -1;
-    background-image: url(../images/base/op-footer.jpg);
+    background-image: url(../images/op-footer.jpg);
     /*background-color: grey;*/
 		background-size: 100% 100%;
 }
 
 .main-bg {
     z-index: -1;
-    background-image: url(../images/base/op-bg.jpg);
+    background-image: url(../images/op-footer.jpg);
 		background-size: 100% 100%;
 }
 .tlinks{text-indent:-9999px;height:0;line-height:0;font-size:0;overflow:hidden;}
@@ -688,20 +684,14 @@ div.owl-controls {
 .single-class {
     margin-bottom: 36px;
 }
-
-.detail-img img{
-    width: 100%;
-    height: 100%;
-}
-
-.class-img {
+.class-img{
     position: relative;
     text-align: center;
     overflow: hidden;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
 }
-.class-img a{
+.class-img img{
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     -webkit-transform: scale(1);
@@ -709,13 +699,8 @@ div.owl-controls {
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
     width: 100%;
-    height: 350px;
 }
-.class-img a img{
-    width: 100%;
-    height: 100%;
-}
-.class-img:hover a{
+.class-img:hover img{
     -webkit-transform: scale(1.05);
     transform: scale(1.05);
 }
@@ -1117,7 +1102,7 @@ div.owl-controls {
 }
 .footer-widget h3{
     font-size: 24px;
-    color: #92278f;
+    color: #fff;
     margin: 0 0 22px;
 }
 .about-widget{
@@ -1148,7 +1133,7 @@ div.owl-controls {
 }
 .footer-widget ul li a{
     display: inline-block;
-    color: #92278f;
+    color: #fff;
     font-size: 14px;
     line-height: 24px;
     position: relative;
@@ -1318,7 +1303,7 @@ button.primary-btn span{
 }
 .inner-page .header-top{
     background: #92278f;
-    background-image: url(../images/base/op-logo.bmp);
+    background-image: url(../images/op-logo.bmp);
 		background-size: 100% 100%;
 }
 .inner-page .social-icon li a:hover{

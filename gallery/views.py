@@ -1,13 +1,29 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Image, Gallery
 from django.views import generic
 # Create your views here.
+def get_image(request, pk, volume, page=1):
+    try:
+        gallery_name = Gallery.objects.get(pk = pk).name
+        image = Image.objects.get(name = gallery_name, volume = volume, page = page)
+        return HttpResponse(image.path)
+    except Exception as e:
+        print e
+        return HttpResponse("404") #TODO:return 404
 
-def image_page(request,pk):
-    return render(request, "gallery/image.html", context={})
+def image_page(request, pk, volume):
+    #try:
+    #    page = request.GET['current_page']
+    #except:
+    #    page = 1
+    page = 1
+    gallery_name = Gallery.objects.get(pk = pk).name
+    max_page = Image.objects.filter(name = gallery_name, volume = volume).count()
+    return render(request, "gallery/image.html", context={"page":page, "max_page":max_page})
 
 class GalleryDetailView(generic.DetailView):
     model = Gallery
