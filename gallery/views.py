@@ -32,7 +32,7 @@ class GalleryDetailView(generic.DetailView):
     '''
     def get_object:
         ...
-        #注意在urls.py中，必须配置?P<pk>属性。detailview通过urls.py中的此属性获取对应的queryset
+        #注意在urls.py中，必须配置?P<pk>参数。detailview通过urls.py中的此属性获取对应的queryset
         #详见generic.DetailView代码get_object
     '''
     def get_context_data(self, **kwargs):
@@ -52,7 +52,9 @@ class GalleryDetailView(generic.DetailView):
         context['volume'] = volume
         return context
 
-class GalleryView(generic.ListView):
+class GalleryListView(generic.ListView):
     model = Gallery
     template_name = "gallery/gallery.html"
     context_object_name = "gallery"
+    paginate_by = 4
+    ordering = 'id'
