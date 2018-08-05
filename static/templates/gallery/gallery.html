@@ -66,6 +66,11 @@
             <li><a disabled="disabled"></a></li>
           {% endif %}
           <li>共{{ paginator.num_pages }}页|当前第{{ page_obj.number }}页|跳转至第
+            <select id="page_select">
+              {% for each in paginator.page_range %}
+                <option value="{{ each }}">{{ each }}</option>
+              {% endfor %}
+            </select>
           </li>
           <!-- <li class="active"><a href="#">2</a></li> -->
           {% if page_obj.has_next %}
