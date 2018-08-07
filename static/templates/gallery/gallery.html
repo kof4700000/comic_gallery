@@ -65,10 +65,18 @@
           {% else %}
             <li><a disabled="disabled"></a></li>
           {% endif %}
-          <li>共{{ paginator.num_pages }}页|当前第{{ page_obj.number }}页|跳转至第
-            <select id="page_select">
+          <li>共
+            <span id="max_gallery_page">{{ paginator.num_pages }}</span>页
+            |当前第
+            <span id="current_gallery_page">{{ page_obj.number }}</span>页
+            |跳转至第
+            <select id="gallery_page_select" onchange="select_gallery_page()">
               {% for each in paginator.page_range %}
+                {% if each == page_obj.number %}
+                <option selected="selected" value="{{ each }}">{{ each }}</option>
+                {% else %}
                 <option value="{{ each }}">{{ each }}</option>
+                {% endif %}
               {% endfor %}
             </select>
           </li>
@@ -84,5 +92,7 @@
   </div>
 </section>
 <!-- /.classes-section -->
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/gallery_func.js"></script>
 
 {% endblock %}
