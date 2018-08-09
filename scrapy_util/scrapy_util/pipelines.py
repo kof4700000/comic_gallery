@@ -9,37 +9,6 @@ from scrapy.conf import settings
 from scrapy.pipelines.images import ImagesPipeline
 from .items import comicCategory
 
-class TestPipeline(object):
-    def __init__(self, user, pwd, database):
-        self.db_user = user
-        self.db_pwd = pwd
-        self.database = database
-
-    @classmethod
-    def from_crawler(cls, crawler):
-        return cls(
-            user = settings['MYSQL_USER'],
-            pwd = settings['MYSQL_PWD'],
-            database = settings['MYSQL_DATABASE'],
-        )
-
-    def open_spider(self, spider):
-        self.conn = mysql.connector.connect(user=self.db_user,
-                                            password=self.db_pwd, 
-                                            database=self.database)
-        self.cursor = self.conn.cursor()
-
-    def close_spider(self, spider):
-        self.cursor.close()
-        self.conn.close()
-
-    def process_item(self, item, spider):
-        name = item['name']
-        insert_sql = 'insert into test(name) VALUES (%s)'
-        self.cursor.execute("insert into test(name) values('%s')" %(name))
-        self.conn.commit() 
-        return item
-
 class GalleryPipeline(object):
     def __init__(self, user, pwd, database):
         self.db_user = user

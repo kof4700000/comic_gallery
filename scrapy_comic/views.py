@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 from scrapy_util.scrapy_util.spiders import comic
+from scrapy_util.scrapy_util.spiders import comic_master
 from django.http import HttpResponse
 # Create your views here.
 def scrapy_page(request):
@@ -10,5 +11,6 @@ def scrapy_page(request):
 
 import sys
 def scrapy_func(request):
-    comic.start_scrapy()
+    #comic.start_scrapy()
+    comic_master.start_scrapy()
     return HttpResponse("123")

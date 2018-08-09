@@ -56,5 +56,5 @@ class GalleryListView(generic.ListView):
     model = Gallery
     template_name = "gallery/gallery.html"
     context_object_name = "gallery"
-    paginate_by = 4
+    paginate_by = 8
     ordering = 'id'
