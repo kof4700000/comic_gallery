@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gallery',
+    'scrapy_comic',
+    'scrapy_util',
 ]
 
 MIDDLEWARE = [
