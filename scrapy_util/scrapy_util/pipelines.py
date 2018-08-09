@@ -40,14 +40,14 @@ class TestPipeline(object):
         self.conn.commit() 
         return item
 
-class ComicPipeline(object):
+class GalleryPipeline(object):
     def __init__(self, user, pwd, database):
         self.db_user = user
         self.db_pwd = pwd
         self.database = database
-        #self.db_user = "comic"
-        #self.db_pwd = "123456"
-        #self.database = "comic"
+        self.db_user = "comic"
+        self.db_pwd = "123456"
+        self.database = "comic"
 
 
     @classmethod

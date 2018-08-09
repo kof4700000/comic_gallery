@@ -8,8 +8,8 @@ from urlparse import urljoin
 project_dir = os.path.abspath(os.path.dirname(__file__))
 
 class ComicSpider(scrapy.Spider):
-    name = 'test'
-    begin_url = "http://comic.kukudm.com/comiclist/2465/index.htm"
+    name = 'gtsb'
+    begin_url = "http://comic.kukudm.com/comiclist/21/index.htm"
     log_file = '/var/myproject/comic/scrapy_util/' + name + '.log'
     #allowed_domains = ["comic.kukudm.com/"]
     custom_settings = {
@@ -18,7 +18,7 @@ class ComicSpider(scrapy.Spider):
         'IMAGES_EXPIRES': 90,
     #'FEED_EXPORT_ENCIDING':'utf-8',
         'ITEM_PIPELINES':{
-        'scrapy_util.scrapy_util.pipelines.ComicPipeline': 300, 
+        'scrapy_util.scrapy_util.pipelines.GalleryPipeline': 300, 
         'scrapy_util.scrapy_util.pipelines.ImagePipeline2': 200,
         },
         'LOG_FILE':log_file,
@@ -107,9 +107,10 @@ from scrapy.utils.project import get_project_settings
 def start_scrapy():
     #how to load settings.py ?
     #process = CrawlerProcess(get_project_settings())
-    process = CrawlerProcess({'MYSQL_USER':"comic",
-                              'MYSQL_PWD':"123456",
-                              'MYSQL_DATABASE':"comic",
-})
+    #process = CrawlerProcess({'MYSQL_USER':"comic",
+    #                          'MYSQL_PWD':"123456",
+    #                          'MYSQL_DATABASE':"comic",
+#})
+    process = CrawlerProcess()
     process.crawl(ComicSpider)
     process.start() 
